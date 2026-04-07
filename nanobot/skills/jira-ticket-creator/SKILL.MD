@@ -1,183 +1,204 @@
-# SKILL.MD --- Jira Ticket Creation (Cross-Platform / BE / Mobile / GenAI / Growth / Infra)
+# SKILL.MD --- Jira Ticket Creation (Strict Structured Format)
 
 ## Purpose
 
-This skill defines how to create high-quality Jira tickets that are: -
-Clear and structured - Technically focused - Concise (not too long, not
-too short) - Actionable for developers and QA - Applicable across all
-domains (BE, Mobile, GenAI, Growth, Infra, etc.)
+This skill enforces a **strict Jira ticket structure** to ensure: -
+Complete descriptions (not too short) - Consistent format across all
+tickets - High-quality, actionable technical documentation
 
 ------------------------------------------------------------------------
 
-## Core Principles
+## CRITICAL RULE (MANDATORY)
 
-### 1. Clarity First
+Every Jira ticket MUST include ALL sections below. NO section can be
+skipped. Descriptions MUST NOT be too short.
 
--   Always explain context → problem → solution
--   Avoid assumptions
--   Use concrete examples when helpful
-
-### 2. Technical but Concise
-
--   Focus on implementation-relevant details
--   Avoid unnecessary explanation
--   No storytelling
-
-### 3. Structured Thinking
-
-Every ticket must: - Be easy to scan - Be easy to execute - Be easy to
-validate
-
-### 4. No Emojis
-
--   Keep tickets professional
--   No emojis in any section
+Each section must contain: - Clear explanation - Sufficient technical
+detail - No empty or placeholder content
 
 ------------------------------------------------------------------------
 
-## Standard Jira Ticket Structure
+## REQUIRED JIRA STRUCTURE (STRICT)
 
 ### Title
 
-Format: \[Scope\] Short Clear Action
+Format: \[Scope\] Clear Action
+
+Must: - Be specific - Mention system/domain (BE / Mobile / GenAI /
+Growth / Infra)
 
 ------------------------------------------------------------------------
 
 ### Background / Context
 
-Explain: - Current system / behavior - Existing limitation - Why this
-change is needed
+Must include: - Current system behavior - Existing implementation (if
+any) - Why this change is needed
+
+Minimum expectation: - 2--4 sentences - Not generic
 
 ------------------------------------------------------------------------
 
 ### Problem Statement
 
-Define clearly: - What is broken / missing - What risk exists - What
-happens if not solved
+Must clearly explain: - What is broken / missing - Why it is a problem -
+What happens if not solved
+
+Minimum expectation: - Specific issue - Real impact
 
 ------------------------------------------------------------------------
 
 ### Business Impact
 
-Explain why it matters: - UX improvement - Security - Performance -
-Growth / engagement - Maintainability - Observability
+Must include at least ONE: - UX impact - Security impact - Performance
+impact - Growth / business value - Operational impact
 
 ------------------------------------------------------------------------
 
 ### Objective
 
-Define high-level goal: - What capability is being added - What outcome
-is expected
+Must clearly define: - What will be delivered - What outcome is expected
+
+Avoid vague statements.
 
 ------------------------------------------------------------------------
 
-## Scope of Work
+## Scope of Work (MANDATORY DETAIL LEVEL)
 
-### 1. Input / API / Trigger
+This section MUST NOT be short.
 
--   Endpoint / event / trigger
--   Request format (if applicable)
--   Entry point (UI, cron, webhook, etc.)
+Must include MULTIPLE subsections:
+
+------------------------------------------------------------------------
+
+### 1. Input / Entry Point
+
+-   API / trigger / UI entry
+-   Request structure (if applicable)
+
+------------------------------------------------------------------------
 
 ### 2. Core Logic / Flow
 
--   Main processing steps
--   Decision logic
--   State handling
+-   Step-by-step logic
+-   Processing flow
+-   Decision handling
 
-### 3. Data / Model / Schema
+------------------------------------------------------------------------
 
--   DB changes
--   Response structure
--   Payload updates
+### 3. Data / Model / Response
+
+-   Schema updates
+-   Response format
+-   Data mapping
+
+------------------------------------------------------------------------
 
 ### 4. Integration
 
 -   External services
 -   Internal services
--   Libraries / SDKs
+-   Libraries
+
+------------------------------------------------------------------------
 
 ### 5. Platform / Domain Specific
 
--   Mobile → Android / iOS handling
--   Backend → service logic, DB, caching
--   GenAI → model usage, token handling
--   Growth → campaign logic, segmentation
--   Infra → deployment, config, environment
+Depending on context:
+
+-   Backend → DB, service, cache
+-   Mobile → Android / iOS behavior
+-   GenAI → model, tokens, processing
+-   Growth → campaign, segmentation
+-   Infra → config, deployment
+
+------------------------------------------------------------------------
 
 ### 6. Error Handling
 
 -   Failure scenarios
--   Fallback logic
 -   Edge cases
+-   Fallback logic
+
+------------------------------------------------------------------------
 
 ### 7. Monitoring / Logging / Tracking
 
--   Logs (CloudWatch, etc.)
+-   Logs
 -   Metrics
 -   Events
+
+------------------------------------------------------------------------
 
 ### 8. Feature Flag (if applicable)
 
 -   Flag name
--   Rollout strategy
--   Segmentation
+-   Rollout plan
 -   Kill switch
 
 ------------------------------------------------------------------------
 
 ## Success Criteria
 
--   Feature works end-to-end
--   No regression
--   Performance acceptable
--   Metrics behaving as expected
+Must define measurable success: - Feature works end-to-end - No
+regression - System behaves as expected
 
 ------------------------------------------------------------------------
 
-## Acceptance Criteria
+## Acceptance Criteria (MANDATORY CHECKLIST)
 
--   [ ] Functional behavior works
--   [ ] Edge cases handled
--   [ ] Integration validated
--   [ ] No regression
+Must: - Use checklist format \[ \] - Be testable - Cover edge cases
+
+Example: - \[ \] Feature works end-to-end - \[ \] Error handling works -
+\[ \] No regression
 
 ------------------------------------------------------------------------
 
 ## Out of Scope
 
-Clearly define what is NOT included.
+Must explicitly define: - What is NOT included
 
 ------------------------------------------------------------------------
 
 ## Dependencies
 
--   APIs
--   Services
--   Libraries
--   Infra
--   External systems
+Must include: - APIs - Services - Libraries - External systems
 
 ------------------------------------------------------------------------
 
 ## Risks & Considerations
 
--   Edge cases
--   Performance risks
--   Platform inconsistencies
--   Integration risks
+Must include: - Edge cases - Performance risks - Integration risks
 
 ------------------------------------------------------------------------
 
 ## Developer Notes
 
--   Implementation tips
--   Known pitfalls
--   Testing scenarios
+Must include: - Implementation hints - Important warnings - Testing
+scenarios
 
 ------------------------------------------------------------------------
 
-## Summary
+## ANTI-PATTERNS (DO NOT DO)
 
-This skill ensures Jira tickets are: - Structured - Concise -
-Cross-domain applicable - Developer-friendly - QA-ready
+Avoid: - Too short descriptions - Missing sections - Generic
+explanations - Vague wording - Repetition without substance
+
+------------------------------------------------------------------------
+
+## QUALITY CHECK (MANDATORY)
+
+Before finalizing ticket:
+
+-   All sections exist
+-   Scope is detailed (not shallow)
+-   Problem is clearly defined
+-   Solution is actionable
+-   No ambiguity
+-   Not too long, not too short
+
+------------------------------------------------------------------------
+
+## SUMMARY
+
+This skill ensures: - Consistent structure - Complete technical detail -
+High-quality Jira tickets - No under-detailed descriptions
