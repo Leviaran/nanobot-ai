@@ -1,204 +1,132 @@
-# SKILL.MD --- Jira Ticket Creation (Strict Structured Format)
+# SKILL.MD --- YouTrack Ticket Creation (Jira-Quality Description Standard)
 
 ## Purpose
 
-This skill enforces a **strict Jira ticket structure** to ensure: -
-Complete descriptions (not too short) - Consistent format across all
-tickets - High-quality, actionable technical documentation
+This skill creates **YouTrack issues using MCP tools (`create_issue`)**,
+while enforcing:
+
+-   YouTrack-compatible fields (summary, description, project,
+    customFields)
+-   Jira-level structured and detailed descriptions
+-   Consistent, high-quality, non-short outputs
 
 ------------------------------------------------------------------------
 
 ## CRITICAL RULE (MANDATORY)
 
-Every Jira ticket MUST include ALL sections below. NO section can be
-skipped. Descriptions MUST NOT be too short.
+When creating issues:
 
-Each section must contain: - Clear explanation - Sufficient technical
-detail - No empty or placeholder content
+1.  ALWAYS use YouTrack format (create_issue)
+2.  ALWAYS use Jira-style structured description
+3.  NEVER generate short descriptions
+4.  ALL sections MUST exist in description
 
 ------------------------------------------------------------------------
 
-## REQUIRED JIRA STRUCTURE (STRICT)
+## YOU MUST USE THIS FLOW
 
-### Title
+### Step 1 --- Get Schema (MANDATORY)
+
+Call: get_issue_fields_schema
+
+Purpose: - Identify required fields - Ensure correct customFields
+
+------------------------------------------------------------------------
+
+### Step 2 --- Create Issue
+
+Use: create_issue
+
+------------------------------------------------------------------------
+
+## YOU TRACK ISSUE STRUCTURE
+
+### Summary
 
 Format: \[Scope\] Clear Action
 
-Must: - Be specific - Mention system/domain (BE / Mobile / GenAI /
-Growth / Infra)
-
 ------------------------------------------------------------------------
+
+## DESCRIPTION (STRICT TEMPLATE)
 
 ### Background / Context
 
-Must include: - Current system behavior - Existing implementation (if
-any) - Why this change is needed
-
-Minimum expectation: - 2--4 sentences - Not generic
-
-------------------------------------------------------------------------
+Explain current system, behavior, and why change is needed.
 
 ### Problem Statement
 
-Must clearly explain: - What is broken / missing - Why it is a problem -
-What happens if not solved
-
-Minimum expectation: - Specific issue - Real impact
-
-------------------------------------------------------------------------
+Explain what is broken or missing and why it matters.
 
 ### Business Impact
 
-Must include at least ONE: - UX impact - Security impact - Performance
-impact - Growth / business value - Operational impact
-
-------------------------------------------------------------------------
+Describe impact (UX, performance, growth, etc.)
 
 ### Objective
 
-Must clearly define: - What will be delivered - What outcome is expected
-
-Avoid vague statements.
+Define what will be delivered.
 
 ------------------------------------------------------------------------
 
-## Scope of Work (MANDATORY DETAIL LEVEL)
-
-This section MUST NOT be short.
-
-Must include MULTIPLE subsections:
-
-------------------------------------------------------------------------
+## Scope of Work
 
 ### 1. Input / Entry Point
 
--   API / trigger / UI entry
--   Request structure (if applicable)
-
-------------------------------------------------------------------------
-
 ### 2. Core Logic / Flow
-
--   Step-by-step logic
--   Processing flow
--   Decision handling
-
-------------------------------------------------------------------------
 
 ### 3. Data / Model / Response
 
--   Schema updates
--   Response format
--   Data mapping
-
-------------------------------------------------------------------------
-
 ### 4. Integration
-
--   External services
--   Internal services
--   Libraries
-
-------------------------------------------------------------------------
 
 ### 5. Platform / Domain Specific
 
-Depending on context:
-
--   Backend → DB, service, cache
--   Mobile → Android / iOS behavior
--   GenAI → model, tokens, processing
--   Growth → campaign, segmentation
--   Infra → config, deployment
-
-------------------------------------------------------------------------
-
 ### 6. Error Handling
-
--   Failure scenarios
--   Edge cases
--   Fallback logic
-
-------------------------------------------------------------------------
 
 ### 7. Monitoring / Logging / Tracking
 
--   Logs
--   Metrics
--   Events
-
-------------------------------------------------------------------------
-
 ### 8. Feature Flag (if applicable)
-
--   Flag name
--   Rollout plan
--   Kill switch
 
 ------------------------------------------------------------------------
 
 ## Success Criteria
 
-Must define measurable success: - Feature works end-to-end - No
-regression - System behaves as expected
+Feature works end-to-end, no regression.
 
 ------------------------------------------------------------------------
 
-## Acceptance Criteria (MANDATORY CHECKLIST)
+## Acceptance Criteria
 
-Must: - Use checklist format \[ \] - Be testable - Cover edge cases
-
-Example: - \[ \] Feature works end-to-end - \[ \] Error handling works -
-\[ \] No regression
+-   [ ] Feature works
+-   [ ] Edge cases handled
+-   [ ] No regression
 
 ------------------------------------------------------------------------
 
 ## Out of Scope
 
-Must explicitly define: - What is NOT included
+Define exclusions.
 
 ------------------------------------------------------------------------
 
 ## Dependencies
 
-Must include: - APIs - Services - Libraries - External systems
+List APIs, services, etc.
 
 ------------------------------------------------------------------------
 
 ## Risks & Considerations
 
-Must include: - Edge cases - Performance risks - Integration risks
+List risks.
 
 ------------------------------------------------------------------------
 
 ## Developer Notes
 
-Must include: - Implementation hints - Important warnings - Testing
-scenarios
-
-------------------------------------------------------------------------
-
-## ANTI-PATTERNS (DO NOT DO)
-
-Avoid: - Too short descriptions - Missing sections - Generic
-explanations - Vague wording - Repetition without substance
-
-------------------------------------------------------------------------
-
-## QUALITY CHECK (MANDATORY)
-
-Before finalizing ticket:
-
--   All sections exist
--   Scope is detailed (not shallow)
--   Problem is clearly defined
--   Solution is actionable
--   No ambiguity
--   Not too long, not too short
+Implementation notes and testing guidance.
 
 ------------------------------------------------------------------------
 
 ## SUMMARY
 
-This skill ensures: - Consistent structure - Complete technical detail -
-High-quality Jira tickets - No under-detailed descriptions
+-   YouTrack ticket creation
+-   Jira-quality structured description
+-   No short or vague output
